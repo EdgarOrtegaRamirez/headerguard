@@ -18,10 +18,10 @@ func newTestServer(headers map[string]string) *httptest.Server {
 
 func TestCheckURL(t *testing.T) {
 	srv := newTestServer(map[string]string{
-		"Content-Security-Policy": "default-src 'self'",
+		"Content-Security-Policy":   "default-src 'self'",
 		"Strict-Transport-Security": "max-age=31536000; includeSubDomains",
-		"X-Frame-Options":         "DENY",
-		"X-Content-Type-Options":  "nosniff",
+		"X-Frame-Options":           "DENY",
+		"X-Content-Type-Options":    "nosniff",
 	})
 	defer srv.Close()
 
@@ -66,11 +66,11 @@ func TestCheckURLNoHeaders(t *testing.T) {
 
 func TestCheckURLForbiddenHeaders(t *testing.T) {
 	srv := newTestServer(map[string]string{
-		"Server":         "Apache/2.4.41",
-		"X-Powered-By":   "PHP/7.4",
-		"Content-Security-Policy": "default-src 'self'",
+		"Server":                    "Apache/2.4.41",
+		"X-Powered-By":              "PHP/7.4",
+		"Content-Security-Policy":   "default-src 'self'",
 		"Strict-Transport-Security": "max-age=31536000",
-		"X-Frame-Options": "SAMEORIGIN",
+		"X-Frame-Options":           "SAMEORIGIN",
 	})
 	defer srv.Close()
 
@@ -112,9 +112,9 @@ func TestCheckURLError(t *testing.T) {
 
 func TestCheckURLCaseInsensitive(t *testing.T) {
 	srv := newTestServer(map[string]string{
-		"content-security-policy": "default-src 'self'",
+		"content-security-policy":   "default-src 'self'",
 		"strict-transport-security": "max-age=31536000",
-		"x-frame-options": "DENY",
+		"x-frame-options":           "DENY",
 	})
 	defer srv.Close()
 

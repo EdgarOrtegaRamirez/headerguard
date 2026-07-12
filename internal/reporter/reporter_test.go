@@ -13,15 +13,15 @@ import (
 
 func makeTestResult(url string) *models.ScanResult {
 	return &models.ScanResult{
-		URL:      url,
+		URL:        url,
 		StatusCode: 200,
 		Headers: map[string]string{
-			"Content-Security-Policy":       "default-src 'self'",
-			"Strict-Transport-Security":     "max-age=31536000",
-			"X-Frame-Options":               "DENY",
+			"Content-Security-Policy":   "default-src 'self'",
+			"Strict-Transport-Security": "max-age=31536000",
+			"X-Frame-Options":           "DENY",
 		},
-		Score:   50,
-		Grade:   "C",
+		Score:    50,
+		Grade:    "C",
 		MaxScore: 105,
 		Results: []models.HeaderResult{
 			{Name: "Content-Security-Policy", Present: true, Value: "default-src 'self'", Weight: 20, Critical: true, Found: true},

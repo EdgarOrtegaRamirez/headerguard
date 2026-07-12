@@ -16,11 +16,11 @@ import (
 )
 
 var (
-	format    string
-	filePath  string
-	strict    bool
-	timeout   time.Duration
-	workers   int
+	format   string
+	filePath string
+	strict   bool
+	timeout  time.Duration
+	workers  int
 )
 
 // checkCmd represents the check command.
